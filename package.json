@@ -3,13 +3,14 @@
   "version": "0.0.0",
   "scripts": {
     "dev": "yarn postinstall && vite",
+    "test": "vite --port 3030",
     "build": "tsc && yarn postinstall && vite build",
     "serve": "vite preview",
     "lint:fix": "eslint ./src --ext .jsx,.js,.ts,.tsx --quiet --fix --ignore-path ./.gitignore",
     "lint:format": "prettier  --loglevel warn --write \"./**/*.{js,jsx,ts,tsx,css,md,json}\" ",
     "lint": "yarn lint:format && yarn lint:fix ",
     "tc": "tsc",
-    "cypress": "cypress open",
+    "cy": "start-test 'http-server -c-1 .' 8080 'cypress run'",
     "postinstall": "node postinstall.js"
   },
   "dependencies": {
@@ -40,8 +41,6 @@
     "tinymce": "^6.3.1"
   },
   "devDependencies": {
-    "@badeball/cypress-cucumber-preprocessor": "^13.0.2",
-    "@bahmutov/cypress-esbuild-preprocessor": "^2.1.5",
     "@faker-js/faker": "^7.6.0",
     "@types/lodash": "^4.14.191",
     "@types/node": "^18.8.4",
@@ -60,8 +59,10 @@
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.28.0",
     "eslint-plugin-simple-import-sort": "^7.0.0",
+    "http-server": "^14.1.1",
     "msw": "^0.48.3",
     "prettier": "^2.5.1",
+    "start-server-and-test": "^1.15.3",
     "typescript": "^4.5.5",
     "vite": "^2.9.12"
   },
