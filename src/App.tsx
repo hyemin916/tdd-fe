@@ -1,5 +1,7 @@
 import './App.css';
 
+import MenuIcon from '@mui/icons-material/Menu';
+import { AppBar, IconButton } from '@mui/material';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import React from 'react';
 
@@ -19,6 +21,11 @@ const App = () => {
     <QueryClientProvider client={queryClient}>
       <ThemeProvider>
         <Route />
+        <AppBar position="static">
+          <IconButton sx={{ display: 'flex', justifyContent: 'start' }}>
+            <MenuIcon sx={{ color: 'white' }} />
+          </IconButton>
+        </AppBar>
       </ThemeProvider>
     </QueryClientProvider>
   );
