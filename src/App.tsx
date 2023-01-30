@@ -1,7 +1,20 @@
 import './App.css';
 
+import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import MenuIcon from '@mui/icons-material/Menu';
-import { AppBar, Container, Drawer, IconButton, styled, Toolbar } from '@mui/material';
+import {
+  AppBar,
+  Container,
+  Drawer,
+  IconButton,
+  List,
+  ListItem,
+  ListItemButton,
+  ListItemIcon,
+  ListItemText,
+  styled,
+  Toolbar,
+} from '@mui/material';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import React from 'react';
 
@@ -34,7 +47,16 @@ const App = () => {
         <Container>
           <Drawer anchor="left" open={true} variant="persistent">
             <Toolbar />
-            <div>test</div>
+            <List>
+              <ListItem disablePadding>
+                <ListItemButton>
+                  <ListItemIcon>
+                    <AddCircleOutlineIcon />
+                  </ListItemIcon>
+                  <ListItemText primary="상품 등록" />
+                </ListItemButton>
+              </ListItem>
+            </List>
           </Drawer>
         </Container>
       </ThemeProvider>
